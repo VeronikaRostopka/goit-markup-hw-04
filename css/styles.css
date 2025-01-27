@@ -86,33 +86,34 @@ a {
 }
 
 .header-menu-link {
+  position: relative;
   display: block;
   padding: 24px 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #2e2f42;
+  color: #2E2F42;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-menu-link:hover,
 .header-menu-link:focus {
-  color: #404bbf;
+  color: #404BBF;
 }
 
 .header-menu-link.active {
-  color: #404bbf;
+  color: #404BBF;
 }
 
 .header-menu-link.active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -1px;
   height: 4px;
   width: 100%;
-  background-color: #404bbf;
+  background-color: #404BBF;
   border-radius: 2px;
 }
 
@@ -322,35 +323,33 @@ a {
 .hero {
   max-width: 1440px;
   margin: 0 auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  padding: 188px 0;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-bg.jpg);
-  padding: 188px 0;
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #2E2F42;
 }
 
-.hero .container {
+.hero-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
 }
 
 .hero-title {
   max-width: 496px;
+  margin: 0 auto;
   margin-bottom: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #ffffff;
-  text-align: center;
   font-size: 56px;
-  font-weight: 700;
   line-height: 1.07;
+  text-align: center;
   letter-spacing: 0.02em;
+  color: #ffffff;
 }
 
 .hero-button {
@@ -358,19 +357,26 @@ a {
   min-width: 169px;
   height: 56px;
   margin: 0 auto;
+  padding: 16px 32px;
   border: none;
   border-radius: 4px;
-  background-color: #4d5ae5;
-  cursor: pointer;
-  color: #ffffff;
+  
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  color: #ffffff;
+  
+  background-color: #4D5AE5;
+  cursor: pointer;
+  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
 .hero-button:focus {
-  background-color: #404bbf;
+  background-color: #404BBF;
 }
 
 .team {
@@ -507,46 +513,50 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.portfolio-thumb {
+.portfolio-cover-wrap {
   position: relative;
   overflow: hidden;
 }
 
-.portfolio-overlay {
+.portfolio-cover-text {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #4d5ae5;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
   padding: 40px 32px;
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-overlay p {
-  color: #f4f4fd;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
-
-.portfolio-item:hover .portfolio-overlay,
-.portfolio-item:focus .portfolio-overlay {
-  transform: translateY(0);
-}
-
-.portfolio-item:hover,
-.portfolio-item:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+.portfolio-item:hover .portfolio-cover-text {
+  transform: translateY(0%);
 }
 
 .portfolio-content {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+}
+
+.portfolio .subtitle {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2E2F42;
+}
+
+.portfolio .text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
 }
 
 .features {
@@ -621,15 +631,38 @@ img {
   align-items: center;
   justify-content: center;
   height: 112px;
-  background-color: #f4f4fd;
-  border-radius: 4px;
   margin-bottom: 8px;
-  padding: 24px 100px;
+  border-radius: 4px;
+  border: 1px solid #8E8F99;
+  background-color: #F4F4FD;
 }
 
 .features-icon {
   width: 64px;
   height: 64px;
+}
+
+.features-list {
+  display: flex;
+  gap: 24px;
+}
+
+.features-item {
+  width: calc((100% - 72px) / 4);
+}
+
+.features .subtitle {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2E2F42;
+}
+
+.features .text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .nav-link.current {
